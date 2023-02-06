@@ -1,42 +1,16 @@
-# Nuxt 3 Minimal Starter
+# About this project
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This is our official corporate website application.
 
-## Setup
+Please visit our [homepage](https://kumano-te.com).
 
-Make sure to install the dependencies:
+# Technical information
 
-```bash
-# yarn
-yarn install
+This is a real-world example of [Nuxt3](https://nuxt.com/) application with the following features.
 
-# npm
-npm install
-
-# pnpm
-pnpm install
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- nuxt3(vue3)
+- typescript
+- tailwindcss
+- eslint
+- prettier
+- commitlint
