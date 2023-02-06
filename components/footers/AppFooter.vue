@@ -17,6 +17,7 @@
     blogActivities: appConfig.blogActivitiesUrl,
     blogSeries: appConfig.blogSeriesUrl,
   }
+  const localePath = useLocalePath()
 </script>
 
 <template>
@@ -157,12 +158,12 @@
               </h3>
               <ul class="mt-4 space-y-4">
                 <li>
-                  <a
+                  <NuxtLink
+                    :href="localePath('/about')"
                     class="text-base text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 capitalize"
-                    @click="$router.push('/about')"
                   >
                     {{ $t('about_us') }}
-                  </a>
+                  </NuxtLink>
                 </li>
                 <li>
                   <a

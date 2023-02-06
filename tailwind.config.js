@@ -13,7 +13,11 @@ module.exports = {
       // default font family
       sans: ['Inter', 'sans-serif'],
     },
-    extend: {},
+    extend: {
+      colors: ({ colors }) => ({
+        primary: colors.sky,
+      }),
+    },
   },
   plugins: [],
 }
