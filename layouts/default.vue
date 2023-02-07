@@ -1,11 +1,13 @@
 <script setup lang="ts">
   import AppFooter from '~/components/footers/AppFooter.vue'
+  import AppHeader from '~/components/headers/AppHeader.vue'
 </script>
 
 <template>
   <div
-    class="min-h-screen flex flex-col font-inter tracking-tight antialiased bg-gray-100 text-gray-900 dark:bg-gray-700 dark:text-gray-50"
+    class="min-h-screen flex flex-col font-inter tracking-tight antialiased bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-50"
   >
+    <AppHeader />
     <main class="flex-grow">
       <slot />
     </main>

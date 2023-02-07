@@ -192,12 +192,12 @@
               </h3>
               <ul class="mt-4 space-y-4">
                 <li>
-                  <a
+                  <NuxtLink
+                    :href="localePath('/privacy_policy')"
                     class="text-base text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 capitalize"
-                    @click="$router.push('/privacy_policy')"
                   >
                     {{ $t('privacy_policy') }}
-                  </a>
+                  </NuxtLink>
                 </li>
               </ul>
             </div>

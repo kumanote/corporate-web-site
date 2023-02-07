@@ -14,4 +14,4 @@ This is a real-world example of [Nuxt3](https://nuxt.com/) application with the 
 - eslint
 - prettier
 - commitlint
-- i18n(internationalization)
+- [i18n(internationalization)](https://v8.i18n.nuxtjs.org/)

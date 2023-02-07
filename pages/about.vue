@@ -35,7 +35,7 @@
                 :key="item"
                 class="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6"
                 :class="{
-                  'bg-white dark:bg-gray-900': index % 2 === 0,
+                  'bg-gray-100 dark:bg-gray-800': index % 2 === 0,
                   'bg-transparent': index % 2 === 1,
                 }"
               >

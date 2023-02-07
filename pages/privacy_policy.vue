@@ -1,5 +1,5 @@
 <template>
-  <div class="py-16 bg-white dark:bg-gray-900">
+  <div class="py-16">
     <div class="px-4 sm:px-6 lg:px-8 space-y-12">
       <div class="prose mx-auto sm:prose-lg">
         <h1>
