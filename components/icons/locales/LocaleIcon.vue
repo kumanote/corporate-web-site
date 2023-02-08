@@ -5,7 +5,7 @@
   interface Props {
     locale: string
   }
-  const Props = withDefaults(defineProps<Props>(), {
+  withDefaults(defineProps<Props>(), {
     locale: 'ja',
   })
 </script>

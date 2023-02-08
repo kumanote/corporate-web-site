@@ -5,6 +5,7 @@
     ChatBubbleOvalLeftEllipsisIcon,
     ArrowRightIcon,
   } from '@heroicons/vue/20/solid'
+  import TextContainer from '~/components/texts/TextContainer.vue'
   const localePath = useLocalePath()
 
   const services = [
@@ -73,7 +74,9 @@
               <dd
                 class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600"
               >
-                <p class="flex-auto">{{ $t(item.description) }}</p>
+                <p class="flex-auto leading-7">
+                  <TextContainer :text="$t(item.description)" />
+                </p>
                 <p class="mt-6">
                   <NuxtLink
                     :href="localePath(item.href)"
