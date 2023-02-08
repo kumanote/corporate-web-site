@@ -13,4 +13,10 @@ export default defineAppConfig({
   blogTopUrl: 'https://kumano-te.com/blog',
   blogActivitiesUrl: 'https://kumano-te.com/activities',
   blogSeriesUrl: 'https://kumano-te.com/series',
+  members: {
+    hirokiTanaka: {
+      twitterUrl: 'https://twitter.com/t_kumanote',
+      githubUrl: 'https://github.com/KumanoTanaka',
+    },
+  },
 })

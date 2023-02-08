@@ -137,7 +137,7 @@
                 <li v-for="item in navItems" :key="item.href">
                   <NuxtLink
                     :href="item.href"
-                    class="relative block px-3 py-2 transition"
+                    class="relative block px-3 py-2 transition capitalize"
                     :class="{
                       'hover:text-primary-500 dark:hover:text-primary-400':
                         !item.active,
