@@ -41,5 +41,16 @@
   },
   "contact": "contact",
   "legal": "legal",
-  "privacy_policy": "privacy policy"
+  "privacy_policy": "privacy policy",
+  "errors": {
+    "default": {
+      "title": "Server error...",
+      "description": "Unexpected error occurred..."
+    },
+    "page_not_found": {
+      "title": "Page not found.",
+      "description": "We couldn't find the page you're looking for."
+    }
+  },
+  "back_to_top": "back to top"
 }
