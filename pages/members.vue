@@ -20,7 +20,7 @@
       <div class="mt-8 sm:mt-18">
         <ul
           role="list"
-          class="space-y-12 sm:-mt-8 sm:space-y-0 sm:divide-y sm:divide-gray-200 lg:gap-x-8 lg:space-y-0"
+          class="space-y-12 sm:-mt-8 sm:space-y-0 sm:divide-y sm:divide-gray-200 lg:gap-x-8 lg:space-y-0 dark:sm:divide-gray-700"
         >
           <li class="sm:py-8">
             <div

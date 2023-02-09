@@ -2,9 +2,23 @@
   import AppFooter from '~/components/footers/AppFooter.vue'
   import AppHero from '~/components/heros/AppHero.vue'
   import AppHeader from '~/components/headers/AppHeader.vue'
+  import BlogSection from '~/components/sections/BlogSection.vue'
+  import { ActivitySearchResult } from '~/api/schema/blog/activity'
   definePageMeta({
     layout: 'top',
   })
+  const appConfig = useAppConfig()
+  const { data: activitiesSearchResult } = await useFetch<ActivitySearchResult>(
+    `${appConfig.blogApiBaseUrl}/activities/search`,
+    {
+      method: 'GET',
+      params: {
+        type: 'latest',
+        skip: 0,
+        limit: 3,
+      },
+    }
+  )
 </script>
 
 <template>
@@ -13,6 +27,10 @@
   </div>
   <main>
     <AppHero />
+    <BlogSection
+      v-if="activitiesSearchResult?.list"
+      :activities="activitiesSearchResult?.list || []"
+    />
   </main>
   <AppFooter />
 </template>
