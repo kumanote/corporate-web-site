@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import TwitterIcon from '~/components/icons/socials/TwitterIcon.vue'
   import GithubIcon from '~/components/icons/socials/GithubIcon.vue'
+  import TextContainer from '~/components/texts/TextContainer.vue'
   const appConfig = useAppConfig()
 </script>
 
@@ -66,9 +67,11 @@
                     <p class="text-gray-500 dark:text-gray-400">
                       {{ $t('members_data.hiroki_tanaka.bio') }}
                     </p>
-                    <p class="text-gray-500 dark:text-gray-400">
-                      {{ $t('members_data.hiroki_tanaka.description') }}
-                    </p>
+                    <div class="text-gray-500 dark:text-gray-400">
+                      <TextContainer
+                        :text="$t('members_data.hiroki_tanaka.description')"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -76,33 +79,38 @@
           </li>
           <li class="sm:py-8">
             <div
-              class="space-y-4 sm:grid sm:grid-cols-3 sm:items-start sm:gap-6 sm:space-y-0"
+              class="relative rounded-lg overflow-hidden bg-gray-900 py-12 px-6 sm:py-16 lg:px-8 dark:bg-gray-800"
             >
-              <div class="aspect-w-1 aspect-h-1">
-                <img
-                  class="rounded-lg object-cover shadow-lg"
-                  src="/images/members/anonymous_designer.png"
-                  alt="Kumanote Designer"
+              <div class="mx-auto max-w-2xl text-center">
+                <h2
+                  class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary-50 to-primary-600 sm:text-3xl uppercase"
+                >
+                  designer
+                </h2>
+                <p class="mt-3 text-lg leading-8 text-gray-300">
+                  <TextContainer :text="$t('members_data.designer_note')" />
+                </p>
+              </div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 1024 1024"
+                class="absolute top-1/2 left-1/2 h-[64rem] w-[64rem] -translate-x-1/2 [mask-image:radial-gradient(closest-side,white,transparent)]"
+                aria-hidden="true"
+              >
+                <circle
+                  cx="512"
+                  cy="512"
+                  r="512"
+                  fill="url(#gradient-circle)"
+                  fill-opacity="0.7"
                 />
-              </div>
-              <div class="sm:col-span-2">
-                <div class="space-y-4">
-                  <div class="space-y-1 text-lg font-medium leading-6">
-                    <h3>{{ $t('members_data.anonymous_designer.name') }}</h3>
-                    <p class="text-primary-600">
-                      {{ $t('members_data.anonymous_designer.role') }}
-                    </p>
-                  </div>
-                  <div class="text-lg space-y-6">
-                    <p class="text-gray-500 dark:text-gray-400">
-                      {{ $t('members_data.anonymous_designer.bio') }}
-                    </p>
-                    <p class="text-gray-500 dark:text-gray-400">
-                      {{ $t('members_data.anonymous_designer.description') }}
-                    </p>
-                  </div>
-                </div>
-              </div>
+                <defs>
+                  <radialGradient id="gradient-circle">
+                    <stop offset="0" stop-color="#0369a1" />
+                    <stop offset="1" stop-color="#bae6fd" />
+                  </radialGradient>
+                </defs>
+              </svg>
             </div>
           </li>
         </ul>

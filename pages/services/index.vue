@@ -62,7 +62,7 @@
               class="flex flex-col"
             >
               <dt
-                class="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900"
+                class="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900 dark:text-gray-50"
               >
                 <component
                   :is="item.icon"
@@ -72,7 +72,7 @@
                 {{ $t(item.name) }}
               </dt>
               <dd
-                class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600"
+                class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600 dark:text-gray-300"
               >
                 <p class="flex-auto leading-7">
                   <TextContainer :text="$t(item.description)" />

@@ -36,12 +36,7 @@
       "bio": "Software Engineer / Amateur Third-Class Radio Operator. I specialize in developing web applications and smartphone applications. I usually take responsibilities in building up cloud infrastructure such as AWS or GCP, in developing server side applications and in developing client side applicatioins.",
       "description": "I first joined a company that develops many softwares of goverment / public.\nFor some year experience, I decided to quit that company and moved to a \"social mobile game\" company where I could have an expericence to manage big data.\nThen I quit the job and started to work as a freelancer.\nAt that time I was able to help some internet service startup companies.\nI also have some experience to start up local business in Cambodia and Vietnam Hanoi.\nCurrently, I am focusing on developing web3 technologies, such as building blockchain applications using Rust programing language. When I'm not designing or building software, I likes to go out and seeking for delicious restaurant, or playing soccer."
     },
-    "anonymous_designer": {
-      "name": "Designer",
-      "role": "CEO",
-      "bio": "I specialize in designing games, 3D, web application and mobile application.",
-      "description": "At kumanote LLC, I focus on creating logos and design materials, and improving the UI/UX of web/smartphone applications."
-    }
+    "designer_note": "We have one designer crew.\nUI/UX design building/modification can be quickly done in-house."
   },
   "contact": "contact",
   "legal": "legal",
