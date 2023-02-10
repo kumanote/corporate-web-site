@@ -80,7 +80,7 @@
                 <p class="mt-6">
                   <NuxtLink
                     :href="localePath(item.href)"
-                    class="text-base font-semibold leading-7 text-primary-600 flex items-center space-x-1"
+                    class="text-base font-semibold leading-7 text-primary-600 hover:text-primary-500 flex items-center space-x-1"
                     ><span>{{ $t('view_details') }}</span
                     ><ArrowRightIcon class="w-4 h-4"
                   /></NuxtLink>

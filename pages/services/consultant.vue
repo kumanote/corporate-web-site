@@ -1,42 +1,45 @@
 <script setup lang="ts">
   import {
-    DeviceTabletIcon,
-    CreditCardIcon,
+    PuzzlePieceIcon,
+    PresentationChartBarIcon,
     CircleStackIcon,
+    AcademicCapIcon,
+    PlusIcon,
   } from '@heroicons/vue/24/outline'
   import { CheckIcon } from '@heroicons/vue/20/solid'
-  import BitcoinIcon from '~/components/icons/others/BitcoinIcon.vue'
   import Breadcrumb from '~/components/breadcrumbs/Breadcrumb.vue'
   const useCases = [
     {
-      name: 'ECサイトの開発',
+      name: 'ゲーム開発チームのメンター',
       description:
-        'stripe社のAPIを活用し、月額課金を含むECサイトの構築を行いました。ご提案をいただいてから3ヶ月程度で納品が完了し、現在も運用を続けさせていただいております。エンドユーザーさま向けのサイトとお客様が日々お使いになっている管理サイトを開発しました。',
-      icon: CreditCardIcon,
+        '大規模な開発チームのメンターをしていました。アクセス数が多く負荷の高い環境を想定したアプリケーションのミドルウェアの選定・検証/課題管理ツール、ソース管理ツール類の導入/分析環境の構築など実装部分の支援も実施させて頂きました。',
+      icon: PuzzlePieceIcon,
     },
     {
-      name: '暗号通貨の入出金ができるサイトの開発',
+      name: 'web3開発チームのメンター',
       description:
-        'Bitcoin、Ethereum、ATOM（コスモス）などの暗号通貨の入出金ができるシステムの構築を行いました。またATOMなどのステーキングに対応している通貨に関してはステーキングノードの構築・運用の実績もございます。',
-      icon: BitcoinIcon,
-    },
-    {
-      name: '電子カルテアプリケーションの開発',
-      description:
-        'Webベースの電子カルテアプリケーションの開発を行いました。お客様のご要望をお聞きし、フルスクラッチで開発を行い、現在も運用を続けさせていただいております。',
-      icon: DeviceTabletIcon,
-    },
-    {
-      name: 'ブロックチェーン開発',
-      description:
-        '"The Honey Badger of BFT Protocols"というコンセンサスプロトコルをRustプログラミング言語を使って実装を行なった実績があります。現在では、そのコンセンサスエンジンを元にブロックチェーンアプリケーションのSDKを開発中です。',
+        '暗号通貨に関係するシステム開発のサポートに止まらず、スマートコントラクトの設計・実装・監査やブロックチェーン自体（レイヤー１と呼ばれています）の開発実績もあります。',
       icon: CircleStackIcon,
+    },
+    {
+      name: 'デジタルマーケティングチームのサポート',
+      description:
+        'Big Dataを扱うデジタルマーケティングチームのサポート実績があります。RedshiftやHadoop/Prestoなどを使った分析環境の構築などの支援を行いました。',
+      icon: PresentationChartBarIcon,
+    },
+    {
+      name: 'その他',
+      description:
+        'Rust/Kubernetes/NewSQL/Nuxt3/NextJs/SwiftUI/Jetpack Composeなどのモダンな技術を習得していますので、そのような技術の導入を検討されているチームを支援させて頂きます。',
+      icon: AcademicCapIcon,
     },
   ]
   const features = [
-    '設計/デザイン/開発を全て一括対応',
+    'スポットのコーディングや検証作業も対応致します',
+    '作業時は都度作業内容の分かるレポートを作成致します',
+    '対応時間に応じたご請求',
+    'ChatworkやSlackなどを使った質問対応',
     '24時間365日対応（緊急の場合に限ります）',
-    '運用後は対応時間に応じたご請求',
   ]
   const appConfig = useAppConfig()
   const localeRoute = useLocaleRoute()
@@ -47,8 +50,8 @@
       href: localeRoute('/services', locale.value)?.path,
     },
     {
-      name: 'system_development',
-      href: localeRoute('/services/system_development', locale.value)?.path,
+      name: 'consultant',
+      href: localeRoute('/services/consultant', locale.value)?.path,
     },
   ]
 </script>
@@ -74,12 +77,12 @@
             id="system_development"
             class="mt-2 text-3xl font-extrabold text-gray-900 dark:text-gray-50 tracking-tight sm:text-4xl"
           >
-            {{ $t('system_development') }}
+            {{ $t('consultant') }}
           </h2>
           <p
             class="mt-5 mx-auto sm:max-w-3xl text-xl text-gray-500 dark:text-gray-400"
           >
-            {{ $t('system_development_description') }}
+            {{ $t('consultant_description') }}
           </p>
         </div>
         <div class="mx-auto mt-10 sm:mt-12 lg:mt-16">
@@ -104,7 +107,7 @@
                   <p
                     class="mt-2 text-2xl font-bold text-gray-900 sm:text-3xl sm:tracking-tight dark:text-gray-50"
                   >
-                    {{ $t('system_development_use_case_title') }}
+                    {{ $t('consultant_use_case_title') }}
                   </p>
                   <dl class="mt-12 space-y-10">
                     <div
@@ -143,18 +146,37 @@
                 <div class="mx-auto w-full max-w-lg space-y-8 lg:mx-0">
                   <div>
                     <div class="flex flex-col text-center">
-                      <div class="flex items-baseline justify-center gap-x-2">
+                      <div class="relative grid grid-cols-2">
+                        <div class="flex items-baseline justify-center gap-x-2">
+                          <span
+                            class="text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl"
+                            >¥50,000</span
+                          >
+                          <span
+                            class="text-sm font-semibold leading-7 text-gray-100 lg:text-base"
+                            >/月</span
+                          >
+                        </div>
                         <span
-                          class="text-5xl font-bold tracking-tight text-white"
-                          >¥1,000,000</span
+                          class="pointer-events-none absolute flex h-8 w-full items-center justify-center lg:h-12"
                         >
-                        <span
-                          class="text-base font-semibold leading-7 text-gray-100"
-                          >/月</span
-                        >
+                          <PlusIcon
+                            class="h-4 w-4 text-primary-200 lg:h-6 lg:w-6"
+                          />
+                        </span>
+                        <div class="flex items-baseline justify-center gap-x-2">
+                          <span
+                            class="text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl"
+                            >¥6,250</span
+                          >
+                          <span
+                            class="text-sm font-semibold leading-7 text-gray-100 lg:text-base"
+                            >/時間</span
+                          >
+                        </div>
                       </div>
                       <span class="mt-2 text-sm font-medium text-primary-100"
-                        >一月フルで稼働した場合のコストです。<br />運用にかかるコストは、サーバー費用やドメイン費用などの諸経費はお客様側でお支払い設定をして頂き、弊社側は仕様変更や不具合対応にかかった時間分だけ請求させていただく方針とさせていただいております。</span
+                        >※8時間を超える実稼働が発生した場合<br />発生した時間を元に追加で請求させて頂きます。</span
                       >
                     </div>
                   </div>
