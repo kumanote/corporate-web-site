@@ -87,28 +87,28 @@
               </h3>
               <ul class="mt-4 space-y-4">
                 <li>
-                  <a
+                  <NuxtLink
+                    :href="localePath('/services/system_development')"
                     class="text-base text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 capitalize"
-                    @click="$router.push('/blog')"
                   >
                     {{ $t('system_development') }}
-                  </a>
+                  </NuxtLink>
                 </li>
                 <li>
-                  <a
+                  <NuxtLink
+                    :href="localePath('/services/consultant')"
                     class="text-base text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 capitalize"
-                    @click="$router.push('/series')"
                   >
                     {{ $t('consultant') }}
-                  </a>
+                  </NuxtLink>
                 </li>
                 <li>
-                  <a
+                  <NuxtLink
+                    :href="localePath('/services/our_products')"
                     class="text-base text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 capitalize"
-                    @click="$router.push('/activities')"
                   >
                     {{ $t('our_products') }}
-                  </a>
+                  </NuxtLink>
                 </li>
               </ul>
             </div>
@@ -166,12 +166,12 @@
                   </NuxtLink>
                 </li>
                 <li>
-                  <a
+                  <NuxtLink
+                    :href="localePath('/members')"
                     class="text-base text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 capitalize"
-                    @click="$router.push('/members')"
                   >
                     {{ $t('members') }}
-                  </a>
+                  </NuxtLink>
                 </li>
                 <li>
                   <a

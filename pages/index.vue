@@ -2,6 +2,7 @@
   import AppFooter from '~/components/footers/AppFooter.vue'
   import AppHero from '~/components/heros/AppHero.vue'
   import AppHeader from '~/components/headers/AppHeader.vue'
+  import ServiceListSection from '~/components/sections/ServiceListSection.vue'
   import BlogSection from '~/components/sections/BlogSection.vue'
   import { ActivitySearchResult } from '~/api/schema/blog/activity'
   definePageMeta({
@@ -27,6 +28,7 @@
   </div>
   <main>
     <AppHero />
+    <ServiceListSection />
     <BlogSection
       v-if="activitiesSearchResult?.list"
       :activities="activitiesSearchResult?.list || []"
