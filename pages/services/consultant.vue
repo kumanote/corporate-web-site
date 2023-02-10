@@ -75,7 +75,7 @@
           </p>
           <h2
             id="system_development"
-            class="mt-2 text-3xl font-extrabold text-gray-900 dark:text-gray-50 tracking-tight sm:text-4xl"
+            class="mt-2 text-3xl font-extrabold text-gray-900 dark:text-gray-50 tracking-tight sm:text-4xl uppercase"
           >
             {{ $t('consultant') }}
           </h2>

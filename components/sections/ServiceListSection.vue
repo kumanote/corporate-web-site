@@ -44,7 +44,7 @@
           </p>
           <h2
             id="system_development"
-            class="mt-2 text-3xl font-extrabold text-gray-900 dark:text-gray-50 tracking-tight sm:text-4xl"
+            class="mt-2 text-3xl font-extrabold text-gray-900 dark:text-gray-50 tracking-tight sm:text-4xl uppercase"
           >
             {{ $t('service') }}
           </h2>
@@ -62,7 +62,7 @@
               class="flex flex-col"
             >
               <dt
-                class="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900 dark:text-gray-50"
+                class="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900 dark:text-gray-50 capitalize"
               >
                 <component
                   :is="item.icon"
