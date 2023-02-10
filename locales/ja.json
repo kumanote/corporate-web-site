@@ -41,5 +41,16 @@
   },
   "contact": "お問い合わせ",
   "legal": "法務",
-  "privacy_policy": "個人情報保護方針"
+  "privacy_policy": "個人情報保護方針",
+  "errors": {
+    "default": {
+      "title": "サーバーエラー",
+      "description": "予期せぬエラーが発生しました。"
+    },
+    "page_not_found": {
+      "title": "ページがありません",
+      "description": "お探しのページは見つかりませんでした。"
+    }
+  },
+  "back_to_top": "TOPに戻る"
 }
