@@ -6,6 +6,7 @@
     CreditCardIcon,
   } from '@heroicons/vue/24/outline'
   import { CheckIcon } from '@heroicons/vue/20/solid'
+  import Breadcrumb from '~/components/breadcrumbs/Breadcrumb.vue'
   const useCases = [
     {
       name: 'ECサイトの開発',
@@ -38,10 +39,27 @@
     '運用後は対応時間に応じたご請求',
   ]
   const appConfig = useAppConfig()
+  const localeRoute = useLocaleRoute()
+  const { locale } = useI18n()
+  const breadcrumbItems = [
+    {
+      name: 'service',
+      href: localeRoute('/services', locale.value)?.path,
+    },
+    {
+      name: 'system_development',
+      href: localeRoute('/services/system_development', locale.value)?.path,
+    },
+  ]
 </script>
 
 <template>
-  <section class="py-16 sm:py-24 lg:py-32">
+  <div
+    class="mx-auto max-w-md px-4 sm:px-6 sm:max-w-3xl lg:px-8 lg:max-w-7xl py-2"
+  >
+    <Breadcrumb :items="breadcrumbItems" />
+  </div>
+  <section class="pt-12 pb-16 sm:pb-20 sm:pb-24 lg:pb-28 lg:pb-32">
     <div
       class="mx-auto max-w-md px-4 sm:px-6 sm:max-w-3xl lg:px-8 lg:max-w-7xl"
     >
