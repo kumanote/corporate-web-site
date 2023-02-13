@@ -7,6 +7,10 @@
   import { CheckIcon } from '@heroicons/vue/20/solid'
   import BitcoinIcon from '~/components/icons/others/BitcoinIcon.vue'
   import Breadcrumb from '~/components/breadcrumbs/Breadcrumb.vue'
+  const { t, locale } = useI18n()
+  const appConfig = useAppConfig()
+  const localeRoute = useLocaleRoute()
+  useHead({ title: t('system_development') })
   const useCases = [
     {
       name: 'ECサイトの開発',
@@ -38,9 +42,6 @@
     '24時間365日対応（緊急の場合に限ります）',
     '運用後は対応時間に応じたご請求',
   ]
-  const appConfig = useAppConfig()
-  const localeRoute = useLocaleRoute()
-  const { locale } = useI18n()
   const breadcrumbItems = [
     {
       name: 'service',

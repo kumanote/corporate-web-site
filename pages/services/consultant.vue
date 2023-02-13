@@ -8,6 +8,10 @@
   } from '@heroicons/vue/24/outline'
   import { CheckIcon } from '@heroicons/vue/20/solid'
   import Breadcrumb from '~/components/breadcrumbs/Breadcrumb.vue'
+  const appConfig = useAppConfig()
+  const localeRoute = useLocaleRoute()
+  const { locale, t } = useI18n()
+  useHead({ title: t('consultant') })
   const useCases = [
     {
       name: 'ゲーム開発チームのメンター',
@@ -41,9 +45,6 @@
     'ChatworkやSlackなどを使った質問対応',
     '24時間365日対応（緊急の場合に限ります）',
   ]
-  const appConfig = useAppConfig()
-  const localeRoute = useLocaleRoute()
-  const { locale } = useI18n()
   const breadcrumbItems = [
     {
       name: 'service',

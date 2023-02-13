@@ -3,6 +3,8 @@
   import GithubIcon from '~/components/icons/socials/GithubIcon.vue'
   import TextContainer from '~/components/texts/TextContainer.vue'
   const appConfig = useAppConfig()
+  const { t } = useI18n()
+  useHead({ title: t('members') })
 </script>
 
 <template>

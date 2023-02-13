@@ -6,7 +6,8 @@
   import { ActivitySearchResult } from '~/api/schema/blog/activity'
   const appConfig = useAppConfig()
   const localeRoute = useLocaleRoute()
-  const { locale } = useI18n()
+  const { locale, t } = useI18n()
+  useHead({ title: t('our_products') })
   const breadcrumbItems = [
     {
       name: 'service',

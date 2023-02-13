@@ -1,4 +1,6 @@
 <script setup lang="ts">
+  const { t } = useI18n()
+  useHead({ title: t('about_us') })
   const companyData = [
     'company_name',
     'company_address',

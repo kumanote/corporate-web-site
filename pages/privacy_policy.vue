@@ -1,3 +1,8 @@
+<script setup lang="ts">
+  const { t } = useI18n()
+  useHead({ title: t('privacy_policy') })
+</script>
+
 <template>
   <div class="py-16">
     <div class="px-4 sm:px-6 lg:px-8 space-y-12">
