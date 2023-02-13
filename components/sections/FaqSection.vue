@@ -1,3 +1,9 @@
+<script setup>
+  const faqs = ['business', 'flow', 'help']
+  const { locale } = useI18n()
+  const localePath = useLocalePath()
+</script>
+
 <template>
   <section class="bg-gray-50 dark:bg-gray-800">
     <div class="mx-auto max-w-7xl px-6 py-24 sm:pt-32 lg:py-40 lg:px-8">
@@ -6,24 +12,34 @@
           <h2
             class="text-2xl font-bold leading-10 tracking-tight text-gray-900"
           >
-            合同会社kumanoteはどんな会社？
+            {{ $t('faq_title') }}
           </h2>
           <p class="mt-4 text-base leading-7 text-gray-600">
-            会社情報は<NuxtLink
-              href="/about"
-              class="text-primary-600 hover:text-primary-500 underline font-semibold"
-              >こちら</NuxtLink
-            >をご覧ください。
+            <template v-if="locale === 'en'">
+              For official company information, please visit
+              <NuxtLink
+                :href="localePath('/about')"
+                class="text-primary-600 hover:text-primary-500 underline font-semibold"
+                >here</NuxtLink
+              >.
+            </template>
+            <template v-else>
+              会社情報は<NuxtLink
+                :href="localePath('/about')"
+                class="text-primary-600 hover:text-primary-500 underline font-semibold"
+                >こちら</NuxtLink
+              >をご覧ください。
+            </template>
           </p>
         </div>
         <div class="mt-10 lg:col-span-7 lg:mt-0">
           <dl class="space-y-10">
-            <div v-for="faq in faqs" :key="faq.question">
+            <div v-for="item in faqs" :key="item">
               <dt class="text-base font-semibold leading-7 text-gray-900">
-                {{ faq.question }}
+                {{ $t(`faq.${item}.question`) }}
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
-                {{ faq.answer }}
+                {{ $t(`faq.${item}.answer`) }}
               </dd>
             </div>
           </dl>
@@ -32,18 +48,3 @@
     </div>
   </section>
 </template>
-
-<script setup>
-  const faqs = [
-    {
-      question: 'どのような事業をしていますか？',
-      answer:
-        '合同会社kumanoteはWebサイトやスマホアプリの請負開発をメインに、少数精鋭でのフルリモート開発をしています。またシステム開発に関するコンサルティングサービスも提供しています。',
-    },
-    {
-      question: '開発をお願いする際のフローはどのようなものですか？',
-      answer:
-        '構想段階の企画からお客様とやりとりさせていただき、複雑でわかりづらいシステムの要件整理・デザイン・開発は全て弊社が対応させていただきます。',
-    },
-  ]
-</script>
