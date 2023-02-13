@@ -1,6 +1,21 @@
 {
   "author": "kumanote LLC.",
   "menu": "menu",
+  "faq_title": "About kumanote LLC.",
+  "faq": {
+    "business": {
+      "question": "What kind of services does kumanote provide?",
+      "answer": "We are mainly undertake web and mobile application developments(small to medium-scale). We also provide consulting services for system development."
+    },
+    "flow": {
+      "question": "What is the flow when requesting system development?",
+      "answer": "We start from hearing planning concepts from our clients, and we will handle all the requirement definitions, UI/UX design, and system development(including server infrastructures). Please feel free to contact us."
+    },
+    "help": {
+      "question": "Is it possible for you to join our development team?",
+      "answer": "Yes. Although full remote development is a prerequisite, we will proceed with your business as a member of your team."
+    }
+  },
   "service": "service",
   "service_description": "We offer the following services. If you are interested, please feel free to contact us",
   "view_details": "View details",
