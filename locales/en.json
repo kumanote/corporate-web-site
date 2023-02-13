@@ -25,6 +25,7 @@
   "consultant_description": "We provides consulting services related to system development.\nFor example, it may be useful in the following scenes.\n- In case you want to check whether your system development estimate is OK. - In case you want to evaluate a new technology for your new system proposals, but you don't have time to complete it.",
   "our_products": "our products",
   "our_products_description": "We also develops its own services. We are developing \"OSS help-desk\" service and in-house blog sites(as well as mobile applications).",
+  "help_desk_description": "We are building an open source inquiry management system (* currently under active development, i.e. not yet released...)",
   "use_case": "use case",
   "system_development_use_case_title": "",
   "consultant_use_case_title": "",

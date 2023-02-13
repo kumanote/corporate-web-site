@@ -2,6 +2,7 @@
   import Breadcrumb from '~/components/breadcrumbs/Breadcrumb.vue'
   import BlogSection from '~/components/sections/BlogSection.vue'
   import BlogAppSection from '~/components/sections/BlogAppSection.vue'
+  import HelpDeskSection from '~/components/sections/HelpDeskSection.vue'
   import { ActivitySearchResult } from '~/api/schema/blog/activity'
   const appConfig = useAppConfig()
   const localeRoute = useLocaleRoute()
@@ -35,7 +36,7 @@
   >
     <Breadcrumb :items="breadcrumbItems" />
   </div>
-  <section class="pt-12 pb-16 sm:pb-20 sm:pb-24 lg:pb-28 lg:pb-32">
+  <div class="pt-12 pb-16 sm:pb-20 sm:pb-24 lg:pb-28 lg:pb-32">
     <div
       class="mx-auto max-w-md px-4 sm:px-6 sm:max-w-3xl lg:px-8 lg:max-w-7xl"
     >
@@ -60,10 +61,11 @@
         </div>
       </div>
     </div>
-  </section>
-  <BlogSection
-    v-if="activitiesSearchResult?.list"
-    :activities="activitiesSearchResult?.list || []"
-  />
-  <BlogAppSection />
+    <HelpDeskSection />
+    <BlogSection
+      v-if="activitiesSearchResult?.list"
+      :activities="activitiesSearchResult?.list || []"
+    />
+    <BlogAppSection />
+  </div>
 </template>
