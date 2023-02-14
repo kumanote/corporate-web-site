@@ -275,6 +275,16 @@ export default defineNuxtConfig({
         },
       },
     ],
+    [
+      '@funken-studio/sitemap-nuxt-3',
+      {
+        generateOnBuild: true,
+        hostname: 'https://kumano-te.com',
+        gzip: true,
+        path: '/sitemap.xml',
+        cacheTime: 1000 * 60 * 60 * 24, // 1 day
+      },
+    ],
   ],
   runtimeConfig: {
     public: {
