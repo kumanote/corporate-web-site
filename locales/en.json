@@ -20,16 +20,69 @@
   "service": "service",
   "service_description": "We offer the following services. If you are interested, please feel free to contact us",
   "view_details": "View details",
+  "month": "mo",
+  "hour": "hour",
   "system_development": "system development",
   "system_development_description": "We undertake the development of various systems and applications.\nWe develop and operate systems, focusing on small to medium-scale system development that is completed in-house.\nFrom the customer's request stage of \"I want to do this kind of thing\", we undertake the development of the system all at once.\nIn addition, due to our development style with a small number of experts, we will flexibly respond to customer requests.",
+  "system_development_use_case": {
+    "ec_site": {
+      "name": "EC site development",
+      "description": "We developed an EC site(that has monthly billings feature) using Stripe API.We have completed development in about 3 months after receiving the proposal, and we are still operating it.We have developed a site for end users and a management site that customers use every day."
+    },
+    "cryptocurrency_site": {
+      "name": "Crypto currency deposits and withdrawals",
+      "description": "We built a system that can deposit and withdraw cryptocurrencies such as Bitcoin, Ethereum, and ATOM (Cosmos). We also have an experience in building and operating staking nodes for currencies such as ATOM."
+    },
+    "karte": {
+      "name": "Development of electronic medical record application",
+      "description": "We have developed a web-based electronic medical record application. From our customers' requests, we have developed it from scratch, and continue to operate it nowadays."
+    },
+    "blockchain": {
+      "name": "Blockchain development",
+      "description": "We have implemented a consensus protocol so called \"The Honey Badger of BFT Protocols\" using the Rust programing language.Currently, we are developing a blockchain application SDK based on the consensus engine."
+    }
+  },
+  "system_development_feature": {
+    "all_in_one": "All-in-one support for UI design/system design/development",
+    "anytime": "24/7 support",
+    "operation_billings": "(after release) Billing for working time only"
+  },
+  "system_development_pricing_note": "The above is the cost in case our member works for a \"full\" month of development(that is estimated 160 hours).\nAs for the cost of operation, the customer will be required to pay for server costs, domain costs, etc that is actually billed by the 3rd party.\nOur company will only charge our client based on the time we deal with specification modifications and bug fixes.",
   "consultant": "consultant",
   "consultant_description": "We provides consulting services related to system development.\nFor example, it may be useful in the following scenes.\n- In case you want to check whether your system development estimate is OK. - In case you want to evaluate a new technology for your new system proposals, but you don't have time to complete it.",
+  "consultant_use_case": {
+    "game": {
+      "name": "Game development team mentor",
+      "description": "We supported selection and verification of application middleware, assuming an environment with a large number of accesses and a high load.We also supported an introduction of issue management tools and source management tools, and the construction of an analysis environment."
+    },
+    "web3": {
+      "name": "Web3 development team mentor",
+      "description": "In addition to supporting system development related to cryptocurrencies, we also have experience in designing, implementing, and auditing smart contracts and developing blockchain itself (so called Layer 1)."
+    },
+    "digital_marketing": {
+      "name": "Digital marketing team support",
+      "description": "We have an experience in supporting digital marketing teams dealing with Big Data. We provided support for building an analysis environment using Redshift, Hadoop/Presto, etc."
+    },
+    "others": {
+      "name": "Others",
+      "description": "We have a member who have a skill of modern technology such as Rust/Kubernetes/NewSQL/Nuxt3/NextJs/SwiftUI/Jetpack Compose.We are happy to support teams considering to introduce such technology."
+    }
+  },
+  "consultant_feature": {
+    "coding": "Spot coding/programming support",
+    "report": "Submission of work report",
+    "billings": "Billing for working time only",
+    "qa": "Q&A using chat tool e.g. slack",
+    "anytime": "24/7 support"
+  },
+  "consultant_pricing_note": "* In case working time exceeds 8 hours,\nadditional fee will be charged based on the time exceeded.",
   "our_products": "our products",
   "our_products_description": "We also develops its own services. We are developing \"OSS help-desk\" service and in-house blog sites(as well as mobile applications).",
   "help_desk_description": "We are building an open source inquiry management system (* currently under active development, i.e. not yet released...)",
+  "blog_app_description": "We are also developing a mobile application.\nIn that app, we mainly describe UI components that we frequently use in our mobile application development.\nYou can not only touch/use those components but also view those source code. Please have a look.",
   "use_case": "use case",
-  "system_development_use_case_title": "",
-  "consultant_use_case_title": "",
+  "system_development_use_case_title": "The followings are our support cases",
+  "consultant_use_case_title": "The followings are our support cases",
   "blog": "blog",
   "blog_top": "blog top",
   "blog_activities": "activities",

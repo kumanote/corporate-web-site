@@ -1,6 +1,8 @@
 <script setup lang="ts">
   import AppStoreBadge from '~/components/badges/AppStoreBadge.vue'
   import GooglePlayStoreBadge from '~/components/badges/GooglePlayStoreBadge.vue'
+  import TextContainer from '~/components/texts/TextContainer.vue'
+  const appConfig = useAppConfig()
 </script>
 
 <template>
@@ -18,17 +20,23 @@
               <span class="block">Mobile App</span>
             </h2>
             <p class="mt-4 text-lg leading-6 text-primary-200">
-              弊社はモバイルアプリの開発も行っており、その開発ノウハウをモバイルアプリにて公開しております。<br />
-              モバイルアプリでは、弊社で開発する際に頻繁に使うUIコンポーネントを中心に掲載しています。<br />
-              アプリ内のコンポーネントは直接操作できるだけでなく、ソースコードの公開をしています。是非ご覧ください。
+              <TextContainer :text="$t('blog_app_description')" />
             </p>
             <div class="mt-8 flex items-center space-x-2 sm:space-x-4">
-              <AppStoreBadge
-                class="text-white hover:text-gray-200 dark:hover:text-gray-200"
-              />
-              <GooglePlayStoreBadge
-                class="text-white hover:text-gray-200 dark:hover:text-gray-200"
-              />
+              <a
+                target="_blank"
+                :href="appConfig.iOSAppStoreUrl"
+                class="text-white hover:text-gray-200 dark:hover:text-gray-200 w-1/2"
+              >
+                <AppStoreBadge />
+              </a>
+              <a
+                target="_blank"
+                :href="appConfig.androidAppPlayStoreUrl"
+                class="text-white hover:text-gray-200 dark:hover:text-gray-200 w-1/2"
+              >
+                <GooglePlayStoreBadge />
+              </a>
             </div>
           </div>
         </div>

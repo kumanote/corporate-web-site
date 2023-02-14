@@ -16,6 +16,8 @@
     blog: appConfig.blogTopUrl,
     blogActivities: appConfig.blogActivitiesUrl,
     blogSeries: appConfig.blogSeriesUrl,
+    iOSAppStoreUrl: appConfig.iOSAppStoreUrl,
+    androidAppPlayStoreUrl: appConfig.androidAppPlayStoreUrl,
   }
   const localePath = useLocalePath()
 </script>
@@ -63,14 +65,14 @@
           <div class="flex items-center space-x-2">
             <a
               target="_blank"
-              href="https://apps.apple.com/jp/app/kumanote/id1567138466"
+              :href="urls.iOSAppStoreUrl"
               class="w-28 text-white hover:text-gray-200 dark:hover:text-gray-200"
             >
               <AppStoreBadge />
             </a>
             <a
               target="_blank"
-              href="https://play.google.com/store/apps/details?id=com.kumanote.portfolio"
+              :href="urls.androidAppPlayStoreUrl"
               class="w-28 text-white hover:text-gray-200 dark:hover:text-gray-200"
             >
               <GooglePlayStoreBadge />

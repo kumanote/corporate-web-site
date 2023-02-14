@@ -7,41 +7,30 @@
   import { CheckIcon } from '@heroicons/vue/20/solid'
   import BitcoinIcon from '~/components/icons/others/BitcoinIcon.vue'
   import Breadcrumb from '~/components/breadcrumbs/Breadcrumb.vue'
+  import TextContainer from '~/components/texts/TextContainer.vue'
   const { t, locale } = useI18n()
   const appConfig = useAppConfig()
   const localeRoute = useLocaleRoute()
   useHead({ title: t('system_development') })
   const useCases = [
     {
-      name: 'ECサイトの開発',
-      description:
-        'stripe社のAPIを活用し、月額課金を含むECサイトの構築を行いました。ご提案をいただいてから3ヶ月程度で納品が完了し、現在も運用を続けさせていただいております。エンドユーザーさま向けのサイトとお客様が日々お使いになっている管理サイトを開発しました。',
+      category: 'ec_site',
       icon: CreditCardIcon,
     },
     {
-      name: '暗号通貨の入出金ができるサイトの開発',
-      description:
-        'Bitcoin、Ethereum、ATOM（コスモス）などの暗号通貨の入出金ができるシステムの構築を行いました。またATOMなどのステーキングに対応している通貨に関してはステーキングノードの構築・運用の実績もございます。',
+      category: 'cryptocurrency_site',
       icon: BitcoinIcon,
     },
     {
-      name: '電子カルテアプリケーションの開発',
-      description:
-        'Webベースの電子カルテアプリケーションの開発を行いました。お客様のご要望をお聞きし、フルスクラッチで開発を行い、現在も運用を続けさせていただいております。',
+      category: 'karte',
       icon: DeviceTabletIcon,
     },
     {
-      name: 'ブロックチェーン開発',
-      description:
-        '"The Honey Badger of BFT Protocols"というコンセンサスプロトコルをRustプログラミング言語を使って実装を行なった実績があります。現在では、そのコンセンサスエンジンを元にブロックチェーンアプリケーションのSDKを開発中です。',
+      category: 'blockchain',
       icon: CircleStackIcon,
     },
   ]
-  const features = [
-    '設計/デザイン/開発を全て一括対応',
-    '24時間365日対応（緊急の場合に限ります）',
-    '運用後は対応時間に応じたご請求',
-  ]
+  const features = ['all_in_one', 'anytime', 'operation_billings']
   const breadcrumbItems = [
     {
       name: 'service',
@@ -105,8 +94,8 @@
                   </p>
                   <dl class="mt-12 space-y-10">
                     <div
-                      v-for="feature in useCases"
-                      :key="feature.name"
+                      v-for="item in useCases"
+                      :key="item.category"
                       class="relative"
                     >
                       <dt>
@@ -114,7 +103,7 @@
                           class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-primary-500"
                         >
                           <component
-                            :is="feature.icon"
+                            :is="item.icon"
                             class="h-6 w-6 text-white"
                             aria-hidden="true"
                           />
@@ -122,13 +111,21 @@
                         <p
                           class="ml-16 text-lg font-medium leading-6 text-gray-900 dark:text-gray-50"
                         >
-                          {{ feature.name }}
+                          {{
+                            $t(
+                              `system_development_use_case.${item.category}.name`
+                            )
+                          }}
                         </p>
                       </dt>
                       <dd
                         class="mt-2 ml-16 text-base text-gray-500 dark:text-gray-400"
                       >
-                        {{ feature.description }}
+                        {{
+                          $t(
+                            `system_development_use_case.${item.category}.description`
+                          )
+                        }}
                       </dd>
                     </div>
                   </dl>
@@ -147,12 +144,13 @@
                         >
                         <span
                           class="text-base font-semibold leading-7 text-gray-100"
-                          >/月</span
+                          >/{{ $t('month') }}</span
                         >
                       </div>
                       <span class="mt-2 text-sm font-medium text-primary-100"
-                        >一月フルで稼働した場合のコストです。<br />運用にかかるコストは、サーバー費用やドメイン費用などの諸経費はお客様側でお支払い設定をして頂き、弊社側は仕様変更や不具合対応にかかった時間分だけ請求させていただく方針とさせていただいております。</span
-                      >
+                        ><TextContainer
+                          :text="$t('system_development_pricing_note')"
+                      /></span>
                     </div>
                   </div>
                   <ul
@@ -168,7 +166,7 @@
                         class="h-6 w-5 flex-none text-green-300"
                         aria-hidden="true"
                       />
-                      {{ feature }}
+                      {{ $t(`system_development_feature.${feature}`) }}
                     </li>
                   </ul>
                   <a

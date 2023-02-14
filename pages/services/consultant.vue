@@ -8,43 +8,30 @@
   } from '@heroicons/vue/24/outline'
   import { CheckIcon } from '@heroicons/vue/20/solid'
   import Breadcrumb from '~/components/breadcrumbs/Breadcrumb.vue'
+  import TextContainer from '~/components/texts/TextContainer.vue'
   const appConfig = useAppConfig()
   const localeRoute = useLocaleRoute()
   const { locale, t } = useI18n()
   useHead({ title: t('consultant') })
   const useCases = [
     {
-      name: 'ゲーム開発チームのメンター',
-      description:
-        '大規模な開発チームのメンターをしていました。アクセス数が多く負荷の高い環境を想定したアプリケーションのミドルウェアの選定・検証/課題管理ツール、ソース管理ツール類の導入/分析環境の構築など実装部分の支援も実施させて頂きました。',
+      category: 'game',
       icon: PuzzlePieceIcon,
     },
     {
-      name: 'web3開発チームのメンター',
-      description:
-        '暗号通貨に関係するシステム開発のサポートに止まらず、スマートコントラクトの設計・実装・監査やブロックチェーン自体（レイヤー１と呼ばれています）の開発実績もあります。',
+      category: 'web3',
       icon: CircleStackIcon,
     },
     {
-      name: 'デジタルマーケティングチームのサポート',
-      description:
-        'Big Dataを扱うデジタルマーケティングチームのサポート実績があります。RedshiftやHadoop/Prestoなどを使った分析環境の構築などの支援を行いました。',
+      category: 'digital_marketing',
       icon: PresentationChartBarIcon,
     },
     {
-      name: 'その他',
-      description:
-        'Rust/Kubernetes/NewSQL/Nuxt3/NextJs/SwiftUI/Jetpack Composeなどのモダンな技術を習得していますので、そのような技術の導入を検討されているチームを支援させて頂きます。',
+      category: 'others',
       icon: AcademicCapIcon,
     },
   ]
-  const features = [
-    'スポットのコーディングや検証作業も対応致します',
-    '作業時は都度作業内容の分かるレポートを作成致します',
-    '対応時間に応じたご請求',
-    'ChatworkやSlackなどを使った質問対応',
-    '24時間365日対応（緊急の場合に限ります）',
-  ]
+  const features = ['coding', 'report', 'billings', 'qa', 'anytime']
   const breadcrumbItems = [
     {
       name: 'service',
@@ -108,8 +95,8 @@
                   </p>
                   <dl class="mt-12 space-y-10">
                     <div
-                      v-for="feature in useCases"
-                      :key="feature.name"
+                      v-for="item in useCases"
+                      :key="item.category"
                       class="relative"
                     >
                       <dt>
@@ -117,7 +104,7 @@
                           class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-primary-500"
                         >
                           <component
-                            :is="feature.icon"
+                            :is="item.icon"
                             class="h-6 w-6 text-white"
                             aria-hidden="true"
                           />
@@ -125,13 +112,15 @@
                         <p
                           class="ml-16 text-lg font-medium leading-6 text-gray-900 dark:text-gray-50"
                         >
-                          {{ feature.name }}
+                          {{ $t(`consultant_use_case.${item.category}.name`) }}
                         </p>
                       </dt>
                       <dd
-                        class="mt-2 ml-16 text-base text-gray-500 dark:text-gray-400"
+                        class="mt-2 ml-16 text-base text-gray-500 dark:text-gray-400 break-words"
                       >
-                        {{ feature.description }}
+                        {{
+                          $t(`consultant_use_case.${item.category}.description`)
+                        }}
                       </dd>
                     </div>
                   </dl>
@@ -150,8 +139,8 @@
                             >¥50,000</span
                           >
                           <span
-                            class="text-sm font-semibold leading-7 text-gray-100 lg:text-base"
-                            >/月</span
+                            class="text-sm font-semibold leading-7 text-gray-100 lg:text-base capitalize"
+                            >/{{ $t('month') }}</span
                           >
                         </div>
                         <span
@@ -168,13 +157,13 @@
                           >
                           <span
                             class="text-sm font-semibold leading-7 text-gray-100 lg:text-base"
-                            >/時間</span
+                            >/{{ $t('hour') }}</span
                           >
                         </div>
                       </div>
                       <span class="mt-2 text-sm font-medium text-primary-100"
-                        >※8時間を超える実稼働が発生した場合<br />発生した時間を元に追加で請求させて頂きます。</span
-                      >
+                        ><TextContainer :text="$t('consultant_pricing_note')"
+                      /></span>
                     </div>
                   </div>
                   <ul
@@ -190,7 +179,7 @@
                         class="h-6 w-5 flex-none text-green-300"
                         aria-hidden="true"
                       />
-                      {{ feature }}
+                      {{ $t(`consultant_feature.${feature}`) }}
                     </li>
                   </ul>
                   <a
