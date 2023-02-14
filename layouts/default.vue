@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import AppFooter from '~/components/footers/AppFooter.vue'
   import AppHeader from '~/components/headers/AppHeader.vue'
+  import ConfirmCookieBanner from '~/components/banners/ConfirmCookieBanner.vue'
 </script>
 
 <template>
@@ -12,5 +13,6 @@
       <slot />
     </main>
     <AppFooter />
+    <ConfirmCookieBanner />
   </div>
 </template>
