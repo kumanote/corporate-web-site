@@ -10,9 +10,7 @@
 <template>
   <section class="relative bg-gray-50 dark:bg-gray-800 py-16 sm:py-24 lg:py-32">
     <div class="relative">
-      <div
-        class="text-center mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl"
-      >
+      <div class="text-center container">
         <h2
           class="text-base font-semibold tracking-wider text-primary-600 uppercase"
         >
@@ -31,7 +29,7 @@
       </div>
       <div
         v-if="activities.length > 0"
-        class="mt-12 mx-auto max-w-md px-4 grid gap-8 sm:max-w-lg sm:px-6 lg:px-8 lg:grid-cols-3 lg:max-w-7xl"
+        class="mt-12 container grid gap-8 lg:grid-cols-3"
       >
         <BlogCard
           v-for="(item, index) in activities"

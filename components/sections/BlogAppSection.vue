@@ -5,9 +5,7 @@
 
 <template>
   <div class="bg-white dark:bg-gray-900 py-8 sm:py-12 lg:py-16">
-    <div
-      class="mx-auto max-w-md px-4 sm:px-6 sm:max-w-3xl lg:px-8 lg:max-w-7xl"
-    >
+    <div class="container">
       <div
         class="bg-primary-700 rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4"
       >

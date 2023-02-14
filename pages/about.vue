@@ -13,9 +13,7 @@
 
 <template>
   <section class="py-16 sm:py-24 lg:py-32">
-    <div
-      class="mx-auto max-w-md px-4 sm:px-6 sm:max-w-3xl lg:px-8 lg:max-w-7xl"
-    >
+    <div class="container">
       <div>
         <div class="text-center">
           <h2

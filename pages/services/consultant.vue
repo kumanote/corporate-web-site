@@ -58,15 +58,11 @@
 </script>
 
 <template>
-  <div
-    class="mx-auto max-w-md px-4 sm:px-6 sm:max-w-3xl lg:px-8 lg:max-w-7xl py-2"
-  >
+  <div class="container py-2">
     <Breadcrumb :items="breadcrumbItems" />
   </div>
   <section class="pt-12 pb-16 sm:pb-20 sm:pb-24 lg:pb-28 lg:pb-32">
-    <div
-      class="mx-auto max-w-md px-4 sm:px-6 sm:max-w-3xl lg:px-8 lg:max-w-7xl"
-    >
+    <div class="container">
       <div>
         <div class="text-center">
           <p
