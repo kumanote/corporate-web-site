@@ -16,3 +16,4 @@ This is a real-world example of [Nuxt3](https://nuxt.com/) application with the 
 - prettier
 - commitlint
 - [i18n(internationalization)](https://v8.i18n.nuxtjs.org/)
+- [vue-gtag-next](https://matteo-gabriele.gitbook.io/vue-gtag/v/next/)
