@@ -72,5 +72,8 @@
       "description": "We couldn't find the page you're looking for."
     }
   },
-  "back_to_top": "back to top"
+  "back_to_top": "back to top",
+  "cookie_policy_confirmation": "This website uses cookies to collect traffic data in order to investigate our service usage trends. Would you accept the cookies? For more information see the following policy.",
+  "accept_all": "accept all",
+  "reject_all": "reject all"
 }

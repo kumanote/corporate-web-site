@@ -20,4 +20,5 @@ export default defineAppConfig({
       githubUrl: 'https://github.com/KumanoTanaka',
     },
   },
+  acceptTrackingCookieName: 'accept-tracking',
 })

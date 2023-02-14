@@ -276,4 +276,9 @@ export default defineNuxtConfig({
       },
     ],
   ],
+  runtimeConfig: {
+    public: {
+      gaId: '', // can be overridden by NUXT_PUBLIC_GA_ID environment variable
+    },
+  },
 })
