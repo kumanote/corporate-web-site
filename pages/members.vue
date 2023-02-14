@@ -9,9 +9,7 @@
 
 <template>
   <section class="py-16 sm:py-24 lg:py-32">
-    <div
-      class="mx-auto max-w-md px-4 sm:px-6 sm:max-w-3xl lg:px-8 lg:max-w-7xl"
-    >
+    <div class="container">
       <div class="text-center">
         <p
           class="mt-2 text-3xl font-extrabold text-gray-900 dark:text-gray-50 tracking-tight sm:text-4xl capitalize"
@@ -89,7 +87,7 @@
                 >
                   designer
                 </h2>
-                <p class="mt-3 text-lg leading-8 text-gray-300">
+                <p class="mt-3 text-base leading-8 text-gray-300 lg:text-lg">
                   <TextContainer :text="$t('members_data.designer_note')" />
                 </p>
               </div>

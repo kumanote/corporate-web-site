@@ -6,7 +6,7 @@
 
 <template>
   <section class="bg-gray-50 dark:bg-gray-800">
-    <div class="mx-auto max-w-7xl px-6 py-24 sm:pt-32 lg:py-40 lg:px-8">
+    <div class="container py-24 sm:pt-32 lg:py-40">
       <div class="lg:grid lg:grid-cols-12 lg:gap-8">
         <div class="lg:col-span-5">
           <h2
@@ -38,7 +38,7 @@
               <dt class="text-base font-semibold leading-7 text-gray-900">
                 {{ $t(`faq.${item}.question`) }}
               </dt>
-              <dd class="mt-2 text-base leading-7 text-gray-600">
+              <dd class="mt-2 text-base leading-7 text-gray-600 break-words">
                 {{ $t(`faq.${item}.answer`) }}
               </dd>
             </div>

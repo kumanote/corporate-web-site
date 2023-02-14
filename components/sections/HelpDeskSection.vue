@@ -1,8 +1,6 @@
 <template>
   <div class="bg-white dark:bg-gray-900">
-    <div
-      class="mx-auto max-w-md px-4 sm:px-6 sm:max-w-3xl lg:px-8 lg:max-w-7xl py-12 sm:py-16"
-    >
+    <div class="container py-12 sm:py-16">
       <div
         class="relative isolate overflow-hidden bg-gray-900 px-6 pt-16 rounded-lg shadow-xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0"
       >

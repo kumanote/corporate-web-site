@@ -11,6 +11,7 @@ This is a real-world example of [Nuxt3](https://nuxt.com/) application with the 
 - nuxt3(vue3)
 - typescript
 - tailwindcss
+- sass
 - eslint
 - prettier
 - commitlint
