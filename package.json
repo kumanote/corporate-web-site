@@ -1,5 +1,10 @@
 {
-  "private": true,
+  "name": "corporate-web-site",
+  "version": "1.0.0",
+  "description": "This is kumanote official corporate website application.",
+  "homepage": "https://github.com/kumanote/corporate-web-site",
+  "author": "Hiroki Tanaka <hiroki.tanaka@kumano-te.com>",
+  "license": "SEE LICENSE IN LICENCE",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
