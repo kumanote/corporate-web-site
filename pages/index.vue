@@ -5,22 +5,13 @@
   import FaqSection from '~/components/sections/FaqSection.vue'
   import ServiceListSection from '~/components/sections/ServiceListSection.vue'
   import BlogSection from '~/components/sections/BlogSection.vue'
-  import { ActivitySearchResult } from '~/api/schema/blog/activity'
+  import { searchLatestActivities } from '~/api/gateway/activity'
   definePageMeta({
     layout: 'top',
   })
-  const appConfig = useAppConfig()
-  const { data: activitiesSearchResult } = await useFetch<ActivitySearchResult>(
-    `${appConfig.blogApiBaseUrl}/activities/search`,
-    {
-      method: 'GET',
-      params: {
-        type: 'latest',
-        skip: 0,
-        limit: 3,
-      },
-    }
-  )
+  const { data: activitiesSearchResult } = await searchLatestActivities({
+    limit: 3,
+  })
 </script>
 
 <template>

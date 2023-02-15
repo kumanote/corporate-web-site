@@ -3,8 +3,7 @@
   import BlogSection from '~/components/sections/BlogSection.vue'
   import BlogAppSection from '~/components/sections/BlogAppSection.vue'
   import HelpDeskSection from '~/components/sections/HelpDeskSection.vue'
-  import { ActivitySearchResult } from '~/api/schema/blog/activity'
-  const appConfig = useAppConfig()
+  import { searchLatestActivities } from '~/api/gateway/activity'
   const localeRoute = useLocaleRoute()
   const { locale, t } = useI18n()
   useHead({ title: t('our_products') })
@@ -18,17 +17,9 @@
       href: localeRoute('/services/system_development', locale.value)?.path,
     },
   ]
-  const { data: activitiesSearchResult } = await useFetch<ActivitySearchResult>(
-    `${appConfig.blogApiBaseUrl}/activities/search`,
-    {
-      method: 'GET',
-      params: {
-        type: 'latest',
-        skip: 0,
-        limit: 3,
-      },
-    }
-  )
+  const { data: activitiesSearchResult } = await searchLatestActivities({
+    limit: 3,
+  })
 </script>
 
 <template>
