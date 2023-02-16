@@ -3,9 +3,7 @@
   const appConfig = useAppConfig()
   const localePath = useLocalePath()
   const { isEnabled } = useGtagNextState()
-  const accepted = useState<boolean | null>('accepted', () => {
-    return false
-  })
+  const accepted = ref<boolean | null>(false)
 
   const accept = () => {
     const flag = useCookie(appConfig.acceptTrackingCookieName)

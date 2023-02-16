@@ -10,9 +10,9 @@ export default defineAppConfig({
   githubUrl: 'https://github.com/kumanote',
   feedlyUrl:
     'https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fkumano-te.com%2Ffeed.xml',
-  blogTopUrl: 'https://kumano-te.com/blog',
-  blogActivitiesUrl: 'https://kumano-te.com/activities',
-  blogSeriesUrl: 'https://kumano-te.com/series',
+  blogTopUrl: 'https://blog.kumano-te.com',
+  blogActivitiesUrl: 'https://blog.kumano-te.com/activities',
+  blogSeriesUrl: 'https://blog.kumano-te.com/series',
   blogApiBaseUrl: 'https://api.kumano-te.com/api/v1',
   members: {
     hirokiTanaka: {
