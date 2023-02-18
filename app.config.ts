@@ -9,7 +9,7 @@ export default defineAppConfig({
   twitterUrl: 'https://twitter.com/t_kumanote',
   githubUrl: 'https://github.com/kumanote',
   feedlyUrl:
-    'https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fkumano-te.com%2Ffeed.xml',
+    'https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fblog.kumano-te.com%2Ffeed.xml',
   blogTopUrl: 'https://blog.kumano-te.com',
   blogActivitiesUrl: 'https://blog.kumano-te.com/activities',
   blogSeriesUrl: 'https://blog.kumano-te.com/series',
