@@ -31,5 +31,5 @@ This is a real-world example of [Nuxt3](https://nuxt.com/) application with the 
 
 ```bash
 # after build docker image, you can archive built artifacts by the following command.
-% docker run -it -v `pwd`/.build:/tmp/.build ${IMAGE} tar czf /tmp/.build/app.tar.gz /app
+% docker run -it -v `pwd`/.build:/tmp/.build ${IMAGE} tar czf /tmp/.build/corporate-web-site.tar.gz /corporate-web-site
 ```
