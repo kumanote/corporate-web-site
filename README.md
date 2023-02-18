@@ -18,3 +18,11 @@ This is a real-world example of [Nuxt3](https://nuxt.com/) application with the 
 - [i18n(internationalization)](https://v8.i18n.nuxtjs.org/)
 - [vue-gtag-next](https://matteo-gabriele.gitbook.io/vue-gtag/v/next/)
 - [sitemap](https://github.com/funkenstudio/sitemap-module-nuxt-3)
+
+# Docker build & run
+
+```bash
+% IMAGE=corporate-web-site:latest
+% docker build -t ${IMAGE} .
+% docker run --rm -p 3000:3000 ${IMAGE}
+```
