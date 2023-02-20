@@ -5,8 +5,6 @@ COPY ./package.json /corporate-web-site/
 COPY ./yarn.lock /corporate-web-site/
 RUN yarn install
 
-ARG BUILD_ENV
-
 COPY . .
 RUN yarn build
 
