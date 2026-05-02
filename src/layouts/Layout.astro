@@ -1,0 +1,73 @@
+---
+import "../styles/global.css";
+import { siteConfig } from "../config";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+const pageTitle = title ? `${title} | ${siteConfig.title}` : siteConfig.title;
+const pageDescription = description ?? siteConfig.description;
+const gaId = import.meta.env.PUBLIC_GA_ID ?? "";
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <meta name="keywords" content={siteConfig.keywords} />
+
+    <!-- OGP -->
+    <meta property="og:site_name" content={siteConfig.title} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteConfig.url} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:image" content={siteConfig.ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/favicon.ico" />
+    <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icon-16x16.png" />
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
+    <!-- Google Analytics (Cookie同意後にのみ有効化) -->
+    {
+      gaId && (
+        <>
+          <script
+            id="ga-script"
+            type="text/plain"
+            data-ga-id={gaId}
+            set:html={`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${gaId}');
+            `}
+          />
+          <script
+            id="ga-loader"
+            type="text/plain"
+            data-ga-id={gaId}
+            src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+            async
+          />
+        </>
+      )
+    }
+  </head>
+  <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 antialiased">
+    <slot />
+  </body>
+</html>

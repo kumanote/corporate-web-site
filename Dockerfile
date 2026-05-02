@@ -1,12 +1,16 @@
-FROM node:19.6.0-buster-slim
-
-WORKDIR /corporate-web-site
-COPY ./package.json /corporate-web-site/
-COPY ./yarn.lock /corporate-web-site/
-RUN yarn install
-
+# Build stage
+FROM node:22-slim AS build
+WORKDIR /app
+COPY package.json yarn.lock ./
+RUN yarn install --frozen-lockfile --ignore-engines
 COPY . .
+ARG PUBLIC_GA_ID=""
+ENV PUBLIC_GA_ID=${PUBLIC_GA_ID}
 RUN yarn build
 
-EXPOSE 3000
-CMD ["yarn", "run", "nuxt", "start"]
+# Serve stage
+FROM nginx:alpine
+COPY --from=build /app/dist /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
