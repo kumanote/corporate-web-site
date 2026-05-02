@@ -6,30 +6,23 @@ Please visit our [homepage](https://kumano-te.com).
 
 # Technical information
 
-This is a real-world example of [Nuxt3](https://nuxt.com/) application with the following features.
-
-- nuxt3(vue3)
-- typescript
-- tailwindcss
-- sass
-- eslint
-- prettier
+- [Astro](https://astro.build/) + [React](https://react.dev/)
+- TypeScript
+- Tailwind CSS
+- Biome (linter / formatter)
 - commitlint
-- [i18n(internationalization)](https://v8.i18n.nuxtjs.org/)
-- [vue-gtag-next](https://matteo-gabriele.gitbook.io/vue-gtag/v/next/)
-- [sitemap](https://github.com/funkenstudio/sitemap-module-nuxt-3)
 
 # Docker build & run
 
 ```bash
 % IMAGE=corporate-web-site:latest
-% docker build -t ${IMAGE} .
-% docker run --rm -p 3000:3000 ${IMAGE}
+% docker build -t ${IMAGE} --build-arg PUBLIC_GA_ID=G-H7YVNLMHSR .
+% docker run --rm -p 8080:80 ${IMAGE}
 ```
 
 **archive**
 
 ```bash
 # after build docker image, you can archive built artifacts by the following command.
-% docker run -it -v `pwd`/.build:/tmp/.build ${IMAGE} tar czf /tmp/.build/corporate-web-site.tar.gz /corporate-web-site
+% docker run --rm -v `pwd`/.build:/tmp/.build ${IMAGE} tar czf /tmp/.build/corporate-web-site.tar.gz -C /usr/share/nginx html
 ```

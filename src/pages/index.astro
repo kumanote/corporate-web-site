@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import HeroSection from "../components/HeroSection.astro";
+import AboutSection from "../components/AboutSection.astro";
+import MembersSection from "../components/MembersSection.astro";
+import BlogSection from "../components/BlogSection";
+import CookieBanner from "../components/CookieBanner";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout>
+  <Header />
+  <main>
+    <HeroSection />
+    <AboutSection />
+    <MembersSection />
+    <div id="blog">
+      <BlogSection client:visible />
+    </div>
+  </main>
+  <Footer />
+  <CookieBanner client:load />
+</Layout>

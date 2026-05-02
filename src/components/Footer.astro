@@ -1,0 +1,87 @@
+---
+import XIcon from "./icons/XIcon.astro";
+import GitHubIcon from "./icons/GitHubIcon.astro";
+import FacebookIcon from "./icons/FacebookIcon.astro";
+import FeedlyIcon from "./icons/FeedlyIcon.astro";
+import { links } from "../config";
+
+const socialLinks = [
+  { name: "Facebook", href: links.facebook, icon: "facebook" },
+  { name: "X", href: links.x, icon: "x" },
+  { name: "GitHub", href: links.github, icon: "github" },
+  { name: "Feedly", href: links.feedly, icon: "feedly" },
+];
+
+const navigation = {
+  blog: [
+    { name: "ブログTOP", href: links.blog },
+  ],
+  company: [
+    { name: "会社概要", href: "#about" },
+    { name: "社員紹介", href: "#members" },
+    { name: "お問い合わせ", href: links.contact, external: true },
+  ],
+  legal: [
+    { name: "個人情報保護方針", href: "/privacy-policy" },
+  ],
+};
+---
+
+<footer class="bg-gray-100 dark:bg-gray-700">
+  <div class="mx-auto max-w-7xl px-6 py-12 lg:px-8">
+    <div class="md:flex md:items-center md:justify-between">
+      <div class="flex justify-center flex-wrap gap-x-6 text-sm text-gray-500 dark:text-gray-400 md:order-1 md:justify-start">
+        {navigation.company.map((item) =>
+          item.external ? (
+            <a
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:text-gray-900 dark:hover:text-gray-200"
+            >
+              {item.name}
+            </a>
+          ) : (
+            <a href={item.href} class="hover:text-gray-900 dark:hover:text-gray-200">
+              {item.name}
+            </a>
+          )
+        )}
+        {navigation.blog.map((item) => (
+          <a
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-gray-900 dark:hover:text-gray-200"
+          >
+            {item.name}
+          </a>
+        ))}
+        {navigation.legal.map((item) => (
+          <a href={item.href} class="hover:text-gray-900 dark:hover:text-gray-200">
+            {item.name}
+          </a>
+        ))}
+      </div>
+      <div class="mt-6 flex justify-center gap-x-6 md:order-2 md:mt-0">
+        {socialLinks.map((item) => (
+          <a
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-400 hover:text-gray-500 dark:text-gray-500 dark:hover:text-gray-400"
+          >
+            <span class="sr-only">{item.name}</span>
+            {item.icon === "facebook" && <FacebookIcon class="h-6 w-6" />}
+            {item.icon === "x" && <XIcon class="h-6 w-6" />}
+            {item.icon === "github" && <GitHubIcon class="h-6 w-6" />}
+            {item.icon === "feedly" && <FeedlyIcon class="h-6 w-6" />}
+          </a>
+        ))}
+      </div>
+    </div>
+    <p class="mt-6 text-center text-xs text-gray-400 dark:text-gray-500 md:text-left">
+      &copy; 2016 合同会社kumanote
+    </p>
+  </div>
+</footer>

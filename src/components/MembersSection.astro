@@ -1,0 +1,117 @@
+---
+import XIcon from "./icons/XIcon.astro";
+import GitHubIcon from "./icons/GitHubIcon.astro";
+import { members } from "../config";
+---
+
+<section id="members" class="py-16 sm:py-24 lg:py-32 bg-gray-50 dark:bg-gray-800">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <p class="mt-2 text-3xl font-extrabold text-gray-900 dark:text-gray-50 tracking-tight sm:text-4xl">
+        社員紹介
+      </p>
+    </div>
+    <div class="mt-8 sm:mt-18">
+      <ul
+        role="list"
+        class="space-y-12 sm:-mt-8 sm:space-y-0 sm:divide-y sm:divide-gray-200 lg:gap-x-8 lg:space-y-0 dark:sm:divide-gray-700"
+      >
+        <!-- 田中 宏樹 -->
+        <li class="sm:py-8">
+          <div class="space-y-4 sm:grid sm:grid-cols-3 sm:items-start sm:gap-6 sm:space-y-0">
+            <div class="space-y-4">
+              <div class="aspect-w-1 aspect-h-1">
+                <img
+                  class="rounded-lg object-cover shadow-lg"
+                  src="/images/members/tanaka.png"
+                  alt="田中 宏樹"
+                />
+              </div>
+              <ul role="list" class="flex space-x-5">
+                <li>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={members.hirokiTanaka.x}
+                    class="text-gray-400 hover:text-gray-500 dark:text-gray-500 dark:hover:text-gray-400"
+                  >
+                    <span class="sr-only">X</span>
+                    <XIcon class="h-6 w-6" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={members.hirokiTanaka.github}
+                    class="text-gray-400 hover:text-gray-500 dark:text-gray-500 dark:hover:text-gray-400"
+                  >
+                    <span class="sr-only">GitHub</span>
+                    <GitHubIcon class="h-6 w-6" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="sm:col-span-2">
+              <div class="space-y-4">
+                <div class="space-y-1 text-lg font-medium leading-6">
+                  <h3>田中 宏樹</h3>
+                  <p class="text-primary-600">代表社員</p>
+                </div>
+                <div class="text-lg space-y-6">
+                  <p class="text-gray-500 dark:text-gray-400">
+                    ソフトウェアエンジニア / 基本情報技術者 / 応用情報技術者 / 第三級アマチュア無線技士
+                    ウェブアプリケーションやスマートフォンアプリの開発が得意です。インフラ構築 〜
+                    スマートフォンアプリ開発まで幅広く活動しています。
+                  </p>
+                  <div class="text-gray-500 dark:text-gray-400 space-y-4">
+                    <p>
+                      東京大学理学部数学科卒業後、大手SIerの受託開発を経験した後、億単位のレコードデータを扱う大規模ソーシャルゲームのバックエンド開発に従事しました。
+                    </p>
+                    <p>
+                      その後、いくつかのベンチャー企業のお手伝いをさせていただいたり、カンボジアやベトナム（ハノイ）に移住し現地でのプロジェクの立ち上げに携わることができました
+                    </p>
+                    <p>
+                      現在はRustを使ってブロックチェーンアプリケーションを構築したりと、web3関連の技術に特に力を入れて開発を行なっています
+                    </p>
+                    <p>
+                      プライベートではサッカーをしたり、美味しいものを食べに出かけたりするのが好きです。
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <!-- Designer -->
+        <li class="sm:py-8">
+          <div class="relative rounded-lg overflow-hidden bg-gray-900 py-12 px-6 sm:py-16 lg:px-8 dark:bg-gray-800">
+            <div class="mx-auto max-w-2xl text-center">
+              <h2 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary-50 to-primary-600 sm:text-3xl uppercase">
+                designer
+              </h2>
+              <div class="mt-3 text-base leading-8 text-gray-300 lg:text-lg space-y-4">
+                <p>弊社では、デザイナーの社員が１名常駐しています。</p>
+                <p>デザインの構築・変更もスピーディーに対応可できます。</p>
+              </div>
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 1024 1024"
+              class="absolute top-1/2 left-1/2 h-[64rem] w-[64rem] -translate-x-1/2 [mask-image:radial-gradient(closest-side,white,transparent)]"
+              aria-hidden="true"
+            >
+              <circle cx="512" cy="512" r="512" fill="url(#gradient-circle)" fill-opacity="0.7" />
+              <defs>
+                <radialGradient id="gradient-circle">
+                  <stop offset="0" stop-color="#0369a1" />
+                  <stop offset="1" stop-color="#bae6fd" />
+                </radialGradient>
+              </defs>
+            </svg>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

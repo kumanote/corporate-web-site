@@ -1,0 +1,94 @@
+---
+const navItems = [
+  { href: "#about", text: "会社概要" },
+  { href: "#members", text: "社員紹介" },
+  { href: "#blog", text: "ブログ" },
+];
+---
+
+<header class="absolute inset-x-0 top-0 z-50">
+  <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+    <div class="flex lg:flex-1">
+      <a href="/" class="-m-1.5 p-1.5">
+        <span class="sr-only">kumanote</span>
+        <img src="/images/logo.png" alt="kumanote" class="h-8 w-auto rounded-full" />
+      </a>
+    </div>
+    <!-- Mobile menu button -->
+    <div class="flex lg:hidden">
+      <button
+        id="mobile-menu-btn"
+        type="button"
+        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-400"
+      >
+        <span class="sr-only">メニューを開く</span>
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m3.75 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+    <!-- Desktop nav -->
+    <div class="hidden lg:flex lg:gap-x-12">
+      {navItems.map((item) => (
+        <a href={item.href} class="text-sm/6 font-semibold text-white hover:text-primary-400 transition">
+          {item.text}
+        </a>
+      ))}
+    </div>
+    <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden lg:hidden" role="dialog" aria-modal="true">
+    <div class="fixed inset-0 z-50 bg-zinc-800/40 backdrop-blur-sm dark:bg-black/80" id="mobile-menu-backdrop"></div>
+    <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white dark:bg-gray-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 dark:sm:ring-white/10">
+      <div class="flex items-center justify-between">
+        <a href="/" class="-m-1.5 p-1.5">
+          <span class="sr-only">kumanote</span>
+          <img src="/images/logo.png" alt="kumanote" class="h-8 w-auto rounded-full" />
+        </a>
+        <button id="mobile-menu-close" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700 dark:text-gray-400">
+          <span class="sr-only">メニューを閉じる</span>
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="mt-6 flow-root">
+        <div class="-my-6 divide-y divide-gray-500/10 dark:divide-gray-700">
+          <div class="space-y-2 py-6">
+            {navItems.map((item) => (
+              <a
+                href={item.href}
+                class="mobile-menu-link -mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800"
+              >
+                {item.text}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById("mobile-menu-btn");
+  const menu = document.getElementById("mobile-menu");
+  const closeBtn = document.getElementById("mobile-menu-close");
+  const backdrop = document.getElementById("mobile-menu-backdrop");
+  const links = document.querySelectorAll(".mobile-menu-link");
+
+  function openMenu() {
+    menu?.classList.remove("hidden");
+  }
+  function closeMenu() {
+    menu?.classList.add("hidden");
+  }
+
+  btn?.addEventListener("click", openMenu);
+  closeBtn?.addEventListener("click", closeMenu);
+  backdrop?.addEventListener("click", closeMenu);
+  links.forEach((link) => link.addEventListener("click", closeMenu));
+</script>
